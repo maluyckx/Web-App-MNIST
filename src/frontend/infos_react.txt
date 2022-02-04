@@ -1,0 +1,10 @@
+Les lib react (bonne chance pour les erreurs de dépendance si vous avez déjà use react):
+
+React router (pour gérer les routes de la webapp):
+npm install react-router-dom@6
+
+CanvasDraw (pour la zone de dessin, flemme de dev un truc moins opti et moins bien):
+npm i react-canvas-draw
+
+Axios (pour gérer l'envoie de fichier et tout):
+npm install axios

@@ -1,0 +1,36 @@
+html {
+  background-image: linear-gradient(#EDE2E0 .05em, transparent .05em), 
+                    linear-gradient(90deg, #E2C4C2 .05em, transparent .05em);
+  background-size: 3em 3em;
+	animation: gradient 30s ease infinite;
+
+  color: #2C2A2F;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+.App {
+  text-align: center;
+  margin-left: 10%;
+  width: 80%;
+  backdrop-filter: blur(1px);
+}
+
+.Main-App {
+}
+
+.App-header {
+  height: 65px;
+  border-bottom: #D1C4E9 solid 1px;
+}
+

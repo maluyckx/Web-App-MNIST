@@ -1,0 +1,68 @@
+.ImageMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #263238;
+}
+
+h2{
+    font-size: 42px;
+}
+
+.container {
+    margin-top: 20px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.GameZone img {
+    width: 720px;
+    height: 480px;
+}
+
+.text-analyze{
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-file {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image-infos{
+    width: 80%;
+    font-size: 1em;
+    text-align: left;
+    overflow: hidden;
+}
+
+.text-send {
+    width: 25%;
+    background-color: rgba(237,231,246,0.75);
+    font-size: 1.4em;
+    border-radius: 7.5px;
+    border: solid #263238 1px;
+}
+
+.text-send:hover{
+    background-color: rgba(237,231,246,1);
+}
+
+.text-block {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.75em;
+
+    border: 2px solid #D1C4E9;
+    border-radius: 2px;
+    backdrop-filter: blur(5px);
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.1); 
+    box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.1);
+}
