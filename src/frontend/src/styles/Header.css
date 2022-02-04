@@ -43,3 +43,28 @@ h1{
     color: #212121;
     font-family: 'Open Sans', sans-serif;
 }
+
+@media (max-width: 1150px) {
+    .HeaderMain {
+        padding-bottom: 50px;
+    }
+
+    h1 {
+        visibility: hidden;
+        width: 0%;
+    }
+
+    .top-header{
+        margin-top: -10px;
+        width: 7.5%;
+    }
+
+    .logo-header{
+        margin-left: 0px;
+    }
+
+    .HeaderContainer {
+        width: 95%;
+    }
+
+  }

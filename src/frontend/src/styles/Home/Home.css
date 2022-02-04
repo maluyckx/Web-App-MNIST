@@ -10,7 +10,7 @@ h2{
     color: #263238;
 }
 
-.container {
+.home-container {
     margin-top: 25px;
     width: 95%;
     display: flex;
@@ -18,3 +18,14 @@ h2{
     align-items: center;
     justify-content: space-around;
 }
+
+@media (max-width: 1280px) {
+    .home-container {
+        margin-top: -40px;
+        flex-direction: column;
+    }
+    
+    .home-container a {
+        margin-top: 30px;
+    }
+  }

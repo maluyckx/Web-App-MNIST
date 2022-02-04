@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <div className="HomeMain">
         <h2>The Tartine Network</h2>
-        <div className="container">
+        <div className="home-container">
           <BlockChoice name={"Game"} 
                        img_link={"https://cdn.discordapp.com/attachments/718214061283737712/937028286939287632/Daco_4300598.png"} 
                        description={"Le jeu qui utilise notre super IA"} 

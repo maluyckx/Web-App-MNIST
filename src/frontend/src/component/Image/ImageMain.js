@@ -59,8 +59,8 @@ class ImageMain extends Component {
     return (
       <div className="ImageMain">
         <h2>Images</h2>
-        <div className="container">
-            <BlockChoice name={"Take a pic"} 
+        <div className="image-container">
+          <BlockChoice name={"Take a pic"} 
                         img_link={takePhoto} 
                         description={"Pour l'instant flemme de faire celui là"} 
                         link_to={""}/>
