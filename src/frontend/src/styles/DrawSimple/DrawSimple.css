@@ -7,13 +7,13 @@
     color:#263238;
   }
   
-.DrawTitle{
+.draw-title{
   color: #212121;
   font-size: 50px;
   margin-bottom: 20px;
 }
 
-.TextZone{
+.draw-text-zone{
   margin-top: 20px;
   width: 450px;
   height: 80px;
@@ -34,7 +34,7 @@
   border: 2px solid #D1C4E9;
 }
 
-.buttons{ 
+.draw-buttons{ 
   margin-left: 1px;
   height: 390px;
   display: flex;
@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-.buttons img{
+.draw-buttons img{
   margin-bottom: 25px;
   width: 38px;
   height: 38px;
@@ -52,4 +52,13 @@
 
 .img-start{
   margin-top: 93px;
+}
+
+@media (max-width: 620px) {
+  .draw-text-zone{
+    padding-bottom: 20px;
+    width: 350px;
+    height: 50px;
+    font-size: 50px;
+  }
 }

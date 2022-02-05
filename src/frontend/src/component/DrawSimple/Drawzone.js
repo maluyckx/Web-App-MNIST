@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { render } from "react-dom";
 import eraser from "../../assets/img/eraser.png"
 import pencil from "../../assets/img/pencil.png"
@@ -15,12 +15,34 @@ class Drawzone extends Component {
     height: 400,
     brushRadius: 5,
     lazyRadius: 6,
+    width_window: 621,
   };
+
+  updateDimensions = () => {
+    this.setState({ width_window: window.innerWidth});
+    if (this.state.width_window <= 620){
+      this.setState({
+        width: 300,
+        height: 500
+      });
+    } else {
+      this.setState({
+        width: 500,
+        height: 400
+      });
+    }
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
 
   render() {
     return (
       <div className="containerDraw">
-        <div className="buttons">
+        <div className="draw-buttons">
             <img className="img-pencil" alt="eraser" src={pencil}
                   onClick={() => {this.setState({color: "#263238"})}}/> 
             <img className="img-eraser" alt="eraser" src={eraser}

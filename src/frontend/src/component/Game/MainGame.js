@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "../../styles/Game/MainGame.css"
 import Drawgame from "./DrawGame";
-import Celest from "../../assets/img/celeste-game.jpg"
 
 class MainGame extends Component {
   render() {
     return (
       <div className="MainGame">
         <div className="GameZone">
-          <img src={Celest}>
-          </img>
+          Le jeu doit etre dispo sur tel et pc, et j'imagine qu'il doit etre plus opti sur tel,
+          donc voilà la raison de l'affichage comme ca, il faudrait l'expliquer
         </div>
         <Drawgame  />
       </div>

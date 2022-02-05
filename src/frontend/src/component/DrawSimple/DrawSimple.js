@@ -10,9 +10,9 @@ class DrawSimple extends Component {
   render() {
     return (
       <div className="MainDraw">
-        <span className="DrawTitle">Drawspace</span>
+        <span className="draw-title">Drawspace</span>
         <div className="drawzoned"><Drawzone/></div> 
-        <span className="TextZone">{this.text_w}</span>
+        <span className="draw-text-zone">{this.text_w}</span>
       </div>
     );
   }
