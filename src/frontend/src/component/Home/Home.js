@@ -13,11 +13,11 @@ class Home extends Component {
                        img_link={"https://cdn.discordapp.com/attachments/718214061283737712/937028286939287632/Daco_4300598.png"} 
                        description={"Le jeu qui utilise notre super IA"} 
                        link_to={"game"}/>
-          <BlockChoice name={"Draw"} 
+          <BlockChoice name={"Drawing"} 
                        img_link={"https://cdn.discordapp.com/attachments/718214061283737712/937027342201655356/SeekPng.com_patriots-logo-png_295350.png"} 
                        description={"Juste tu dessines et hop ca detecte ton mot, bien pour les tests"} 
                        link_to={"draw"}/>
-          <BlockChoice name={"Images"}
+          <BlockChoice name={"Image"}
                        img_link={"https://cdn.discordapp.com/attachments/718214061283737712/938107948184514580/photo.png"} 
                        description={"Photo/imge vers le texte"} 
                        link_to={"image"}/>

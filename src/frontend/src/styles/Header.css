@@ -43,6 +43,9 @@ h1{
     color: #212121;
     font-family: 'Open Sans', sans-serif;
 }
+.HeaderText:hover{
+    text-decoration: underline;
+}
 
 @media (max-width: 1150px) {
     .HeaderMain {

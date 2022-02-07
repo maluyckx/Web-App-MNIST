@@ -43,7 +43,7 @@ class Drawzone extends Component {
     return (
       <div className="containerDraw">
         <div className="draw-buttons">
-            <img className="img-pencil" alt="eraser" src={pencil}
+            <img className="img-pencil" alt="pencil" src={pencil}
                   onClick={() => {this.setState({color: "#263238"})}}/> 
             <img className="img-eraser" alt="eraser" src={eraser}
                   onClick={() => {this.setState({color: "#FFFFFF"})}}/> 
