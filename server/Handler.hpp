@@ -20,29 +20,12 @@
 namespace Handler{
 
 //First page
-class MyPageHandler: public Poco::Net::HTTPRequestHandler{
+class ErrorHandler: public Poco::Net::HTTPRequestHandler{
 public:
 	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
 };
 
 
-class MyCssHandler :public Poco::Net::HTTPRequestHandler {
-public:
-	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
-};
-
-
-// Page renderer for /Test uri
-
-class TestPageHandler: public Poco::Net::HTTPRequestHandler{
-public:
-	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
-};
-
-class ErroPageHandler: public Poco::Net::HTTPRequestHandler{
-public:
-	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
-};
 
 
 //Image Gestion
