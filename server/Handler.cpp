@@ -15,7 +15,7 @@ void Handler::ErrorHandler::handleRequest(Poco::Net::HTTPServerRequest& request,
 
 
 void Handler::ImageHandler::handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response){
-	std::string way ="asserimage/";
+	std::string way ="image/";
 	std::string name ="lol.png"; //a definir
 	way = way + name;
 	std::fstream my_file;
