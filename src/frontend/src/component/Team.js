@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Team.css"
 import Logo from "../assets/img/logo.png"
+import Edo_photo from "../assets/img/Edo_photo.png"
 
 class Team extends Component {
 
@@ -14,7 +15,7 @@ class Team extends Component {
                   <div class="team">
                       <div class="team-img">
                         <a href="https://github.com/EdgardoCuellar" target="_blank" >
-                          <img className="logo-header" alt="logo" src={Logo} />
+                          <img className="logo-header" alt="logo" src={Edo_photo} />
                         </a>
                       </div>
                       <div class="team-content">

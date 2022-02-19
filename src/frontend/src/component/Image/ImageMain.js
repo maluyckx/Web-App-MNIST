@@ -58,13 +58,20 @@ class ImageMain extends Component {
   render() {
     return (
       <div className="ImageMain">
-        <h2>Images</h2>
+        <h2>Image</h2>
         <div className="image-container">
-          <BlockChoice name={"Take a pic"} 
-                        img_link={takePhoto} 
-                        description={"Pour l'instant flemme de faire celui là"} 
-                        link_to={""}/>
-                        
+
+          <div class="upload">
+            <label htmlFor={"upload-button"}>
+              <BlockChoice name={"Upload"} 
+                          img_link={upload} 
+                          description={"Click Me !"} 
+                          link_to={""}/>
+            </label>
+            <input type="file" id="upload-button" style={{display: 'none'}} 
+                  onChange={this.onFileChange} accept="image/x-png,image/jpeg" />
+          </div>   
+
           <div className="text-analyze">
             <div className="text-file">
               {this.infoFile()}
@@ -77,14 +84,6 @@ class ImageMain extends Component {
             </span>
           </div>
 
-          <label htmlFor={"upload-button"}>
-            <BlockChoice name={"Upload"} 
-                        img_link={upload} 
-                        description={"Ca marche bien c'est cool"} 
-                        link_to={""}/>
-          </label>
-          <input type="file" id="upload-button" style={{display: 'none'}} 
-                 onChange={this.onFileChange} accept="image/x-png,image/jpeg" />
         </div>
       </div>
     );
