@@ -5,10 +5,22 @@ import pencil from "../../assets/img/pencil.png"
 import undo from "../../assets/img/undo.png"
 import restart from "../../assets/img/restart.png"
 import start from "../../assets/img/start.png"
+import HttpRequestSend from "../HttpRequestSend";
 
 import CanvasDraw from "react-canvas-draw";
 
+function dataURLtoFile(dataurl, filename) {
+  var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+  while(n--){
+      u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new File([u8arr], filename, {type:mime});
+}
+
+
 class Drawzone extends Component {
+  
   state = {
     color: "#263238",
     width: 500,
@@ -39,6 +51,7 @@ class Drawzone extends Component {
     window.removeEventListener('resize', this.updateDimensions);
   }
 
+
   render() {
     return (
       <div className="containerDraw">
@@ -54,6 +67,8 @@ class Drawzone extends Component {
             <img className="img-start" alt="start" src={start}
                   onClick={() => {
                     console.log(this.saveableCanvas.getDataURL());
+                    console.log(dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png")) /* à enlever dans le futur   */
+                    HttpRequestSend("pipou.png", 1, dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png") ) 
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"

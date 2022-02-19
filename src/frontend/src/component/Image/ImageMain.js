@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import axios from 'axios';
 
 import "../../styles/ImageMain.css"
 import BlockChoice from "../Home/BlockChoice";
-import takePhoto from "../../assets/img/take_photo.png"
 import upload from "../../assets/img/upload.png"
+import HttpRequestSend from "../HttpRequestSend";
 
 class ImageMain extends Component {
 
-  state = {selectedFile: null};
+  state = {
+    selectedFile: null,
+    text_ia: "Tartine"
+  };
   
   // On file select (from the pop up)
   onFileChange = event => {
@@ -16,16 +18,8 @@ class ImageMain extends Component {
   };
   
   onFileUpload = () => {
-    // Create an object of formData
-    const formData = new FormData();
-    // Update the formData object
-    formData.append(
-      "myFile",
-      this.state.selectedFile,
-      this.state.selectedFile.name
-    );
-    console.log(this.state.selectedFile);
-    axios.post("api/uploadfile", formData);
+    this.setState({text_ia: "upload"});
+    HttpRequestSend(this.state.selectedFile.name, 1, this.state.selectedFile);
   };
 
   infoFile = () => {
@@ -80,10 +74,9 @@ class ImageMain extends Component {
               </button>
             </div>
             <span className="text-block">
-              text block
+              {this.state.text_ia}
             </span>
           </div>
-
         </div>
       </div>
     );
