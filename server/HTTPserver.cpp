@@ -17,9 +17,9 @@ int HTTPserver::init_server(){
           // Instanciate HandlerFactory
     Poco::Net::HTTPServer server(new Handler::HandlerFactory, socket, pParams);
 	server.start();
-	
+	std::cout << "STARTING SERVER..." << std::endl;
 	waitForTerminationRequest();
-
+    std::cout << "CLOSING SERVER..." << std::endl;
     server.stop();
 
     return EXIT_OK;
