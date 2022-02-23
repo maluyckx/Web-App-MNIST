@@ -25,8 +25,10 @@ public:
 	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
 };
 
-
-
+class FetchHandler: public Poco::Net::HTTPRequestHandler{
+public:
+	void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
+};
 
 //Image Gestion
 
