@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
+
 
 function sendRequest(file_name, file){
     const formData = new FormData();
@@ -12,7 +14,8 @@ function sendRequest(file_name, file){
 }
 
 function HttpRequestSend(file_name, type, file) {
-    var final_name = type + "_" + file_name;
+    const [cookies, _] = useCookies(["user"]);
+    var final_name = type + "_" + cookies.UserNB + "_" + file_name;
     sendRequest(final_name, file);
 }
   

@@ -5,6 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 import DrawSimple from "./component/DrawSimple/DrawSimple"
 import Home from './component/Home/Home';
@@ -14,6 +15,14 @@ import Header from './component/Header';
 import Team from './component/Team';
 
 function App() {
+  const [cookies, setCookie] = useCookies(["user"]);
+
+  // Le cookie miom
+  if (!cookies.UserNB) { 
+    var rng = Math.floor(Math.random() * 100000);
+    setCookie('UserNB', rng, {path: "/"});
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
