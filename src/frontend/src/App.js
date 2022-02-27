@@ -5,7 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie'
 
 import DrawSimple from "./component/DrawSimple/DrawSimple"
 import Home from './component/Home/Home';
@@ -14,13 +14,13 @@ import ImageMain from './component/Image/ImageMain';
 import Header from './component/Header';
 import Team from './component/Team';
 
-function App() {
-  const [cookies, setCookie] = useCookies(["user"]);
 
+function App() {
+  const cookie = Cookies.get('UserNB')
   // Le cookie miom
-  if (!cookies.UserNB) { 
+  if (cookie) { 
     var rng = Math.floor(Math.random() * 100000);
-    setCookie('UserNB', rng, {path: "/"});
+    Cookies.set('UserNB', rng);
   }
 
   return (

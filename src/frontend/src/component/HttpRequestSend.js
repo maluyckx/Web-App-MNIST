@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie'
 
 
 function sendRequest(file_name, file){
@@ -14,8 +14,7 @@ function sendRequest(file_name, file){
 }
 
 function HttpRequestSend(file_name, type, file) {
-    const [cookies, _] = useCookies(["user"]);
-    var final_name = type + "_" + cookies.UserNB + "_" + file_name;
+    var final_name = type + "_" + Cookies.get('UserNB') + "_" + file_name;
     sendRequest(final_name, file);
 }
   

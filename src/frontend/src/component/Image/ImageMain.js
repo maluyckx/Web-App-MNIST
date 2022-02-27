@@ -10,7 +10,7 @@ class ImageMain extends Component {
 
   state = {
     selectedFile: null,
-    text_ia: "Tartine"
+    text_ia: "Tartine",
   };
   
   // On file select (from the pop up)
