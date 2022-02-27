@@ -10,4 +10,4 @@ Axios (pour gérer l'envoie de fichier et tout):
 npm install axios
 
 React cookies (pour les cookies)
-npm i react-cookie
+npm i js-cookie   
