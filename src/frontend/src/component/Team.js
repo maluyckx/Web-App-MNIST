@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../styles/Team.css"
 import Logo from "../assets/img/logo.png"
 import Edo_photo from "../assets/img/Edo_photo.png"
+import Marco_photo from "../assets/img/Marco_photo.png"
+import Tiago_photo from "../assets/img/Tiago_photo.png"
 
 class Team extends Component {
 
@@ -27,7 +29,7 @@ class Team extends Component {
                   <div class="team">
                       <div class="team-img">
                         <a href="https://github.com/maluyckx" target="_blank" >
-                          <img className="logo-header" alt="logo" src={Logo} />
+                          <img className="logo-header" alt="logo" src={Marco_photo} />
                         </a>
                       </div>
                       <div class="team-content">
@@ -39,7 +41,7 @@ class Team extends Component {
                   <div class="team">
                       <div class="team-img">
                         <a href="https://github.com/timarque" target="_blank" >
-                          <img className="logo-header" alt="logo" src={Logo} />
+                          <img className="logo-header" alt="logo" src={Tiago_photo} />
                         </a>
                       </div>
                       <div class="team-content">
