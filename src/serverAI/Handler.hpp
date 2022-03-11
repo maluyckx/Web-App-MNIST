@@ -42,10 +42,6 @@ public:
 
 //  Url Router
 class HandlerFactory : public Poco::Net::HTTPRequestHandlerFactory{
-	//attribut for global AI ?
-
-	//attribut for own AI
-	//IAGame
 public:
 	Poco::Net::HTTPRequestHandler* createRequestHandler(const Poco::Net::HTTPServerRequest &request);
 };
