@@ -16,7 +16,7 @@ void Handler::ErrorHandler::handleRequest(Poco::Net::HTTPServerRequest& request,
 
 void Handler::FetchHandler::handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response){
 	//forme le chemin !
-	std::string id ="response/";
+	std::string id ="image/";
 	int i =1;
 	while (request.getURI()[i]){
 		id +=request.getURI()[i];
@@ -33,7 +33,6 @@ void Handler::FetchHandler::handleRequest(Poco::Net::HTTPServerRequest& request,
 	std::ostream& responseStream = response.send();
 	responseStream << resp;
 
-
 	//delete ??
 	remove(id.c_str());
 }
@@ -42,38 +41,42 @@ void Handler::FetchHandler::handleRequest(Poco::Net::HTTPServerRequest& request,
 
 void Handler::ImageHandler::handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response){
 	std::string way ="image/";
-	//int number= rand();
 	int i =0;
+
 	std::string type="";//type de message envoye
 	while (request.getURI()[i] != '_'){
 		type += request.getURI()[i];
 		i++;
 	}
 	i++;
+
 	std::string nbRandom = "";//identifiant du message envoye
 	while (request.getURI()[i] != '_'){
 		nbRandom += request.getURI()[i];
 		i++;
 	}
 	i++;
+
 	way = way+ nbRandom + ".png"; //definis le chemin et numero de l'image.
 	//mets l'image dans le fichier png
 	std::fstream my_file;
 	my_file.open(way, std::ios::out);
+
 	while (request.getURI()[i]){
 		my_file << request.getURI()[i];
 		i++;
 	}
 	
 	my_file.close();
-
-	int answer_ia= -1;//appelle de fonction pour L'IA et je donne le chemin de l'image a analiser
-	
-	//mets la reponse dans un fichier pur L'API
-	std::string resp = "response/" + nbRandom + ".txt";
-	my_file.open(resp, std::ios::out);
-	my_file << answer_ia;
-	my_file.close();
+	//appelle python
+	//creation du l'objet python
+	PyObject* myModuleString = PyString_FromString("nom du fichier python");
+	PyObject* myModule = PyImport_Import(myModuleString);
+	//creation des objet fonction et argument
+	PyObject* myFunction = PyObject_GetAttrString(myModule,"non de la fonction a mettre");
+	PyObject* args = PyTuple_Pack(way);//1,PyFloat_FromDouble(2.0));
+	//lancement
+	PyObject* myResult  = PyObject_CallObject(myFunction, args);
 
 	remove(way.c_str());
 }
@@ -97,20 +100,6 @@ Poco::Net::HTTPRequestHandler* Handler::HandlerFactory::createRequestHandler(con
 		if(request.getMethod() == "SEND") {
 			return new ImageHandler();
 			//Handwritting analyse
-
-
-			//maquette pour le jeu
-		// 	const char type = request.getURI()[0];
-		// 	if (type == '0'){
-		// 		return new ImageHandler();
-		// 	}
-		// 	//a voir si le jeu se fait
-		// 	//start game
-		// 	else if (type == '1'){}
-		// 	//Game analyse
-		// 	else if (type == '2'){}
-		// 	else if (type == '3'){}
-		// }
 		}
 		else{
 			return new ErrorHandler();

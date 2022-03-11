@@ -6,6 +6,8 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include "python3.9/Python.h"
+
 
 #include <Poco/Util/ServerApplication.h>
 #include <Poco/Net/ServerSocket.h>
