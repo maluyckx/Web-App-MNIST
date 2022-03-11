@@ -22,6 +22,7 @@ class ImageMain extends Component {
   onFileUpload = () => {
     this.setState({text_ia: "upload"});
     HttpRequestSend(this.state.selectedFile.name, 1, this.state.selectedFile);
+    this.setState({text_ia: HttpRequestReceive(1)});
   };
 
   infoFile = () => {
