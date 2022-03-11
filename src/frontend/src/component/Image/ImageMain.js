@@ -4,22 +4,25 @@ import "../../styles/ImageMain.css"
 import BlockChoice from "../Home/BlockChoice";
 import upload from "../../assets/img/upload.png"
 import HttpRequestSend from "../HttpRequestSend";
+import HttpRequestReceive from "../HttpRequestReceive";
 
 class ImageMain extends Component {
 
   state = {
     selectedFile: null,
-    text_ia: "Tartine"
+    text_ia: "Tartine",
   };
   
   // On file select (from the pop up)
   onFileChange = event => {
     this.setState({ selectedFile: event.target.files[0] });
+    HttpRequestReceive(1);
   };
   
   onFileUpload = () => {
     this.setState({text_ia: "upload"});
     HttpRequestSend(this.state.selectedFile.name, 1, this.state.selectedFile);
+    this.setState({text_ia: HttpRequestReceive(1)});
   };
 
   infoFile = () => {

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import Cookies from 'js-cookie'
+
 
 function sendRequest(file_name, file){
     const formData = new FormData();
@@ -12,7 +14,7 @@ function sendRequest(file_name, file){
 }
 
 function HttpRequestSend(file_name, type, file) {
-    var final_name = type + "_" + file_name;
+    var final_name = type + "_" + Cookies.get('UserNB') + "_" + file_name;
     sendRequest(final_name, file);
 }
   
