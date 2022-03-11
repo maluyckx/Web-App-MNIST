@@ -86,13 +86,6 @@ void Handler::ImageHandler::handleRequest(Poco::Net::HTTPServerRequest& request,
 
 
 Poco::Net::HTTPRequestHandler* Handler::HandlerFactory::createRequestHandler(const Poco::Net::HTTPServerRequest &request){
-         // choose response based uri
-		//  Poco::Util::AbstractConfiguration::Keys elements;
-		std::cout << "request"<< request.getURI() << " size :"<< request.getURI().size() << " method:"<< request.getMethod()  <<" Type:" << request.getContentType()<< std::endl;
-		//  std::string mot= request.getURI();
-		//  request.splitElements(mot,elements ,false);
-		//  if(elements.size()>0) std::cout << "Size:  "  <<elements.size()<< "SPlit:" << elements[0] << std::endl;
-		//
 		//gestion d'image
 		if(request.getMethod() == "GET") {
 			return new FetchHandler();
