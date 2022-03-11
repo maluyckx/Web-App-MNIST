@@ -4,6 +4,7 @@ import Logo from "../assets/img/logo.png"
 import Edo_photo from "../assets/img/Edo_photo.png"
 import Marco_photo from "../assets/img/Marco_photo.png"
 import Tiago_photo from "../assets/img/Tiago_photo.png"
+import Attilio_photo from "../assets/img/Attilio_photo.png"
 
 class Team extends Component {
 
@@ -53,7 +54,7 @@ class Team extends Component {
                   <div class="team">
                       <div class="team-img">
                         <a href="https://github.com/adiscepo" target="_blank" >
-                          <img className="logo-header" alt="logo" src={Logo} />
+                          <img className="logo-header" alt="logo" src={Attilio_photo} />
                         </a>
                       </div>
                       <div class="team-content">
