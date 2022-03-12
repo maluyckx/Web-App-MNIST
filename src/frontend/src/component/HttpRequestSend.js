@@ -10,7 +10,7 @@ function sendRequest(file_name, file){
       file.name
     );
     // L'url de notre server
-    axios.post("https://eo4vmpnu218dpco.m.pipedream.net/", formData);
+    axios.post("localhost:2022", formData);
 }
 
 function HttpRequestSend(file_name, type, file) {
