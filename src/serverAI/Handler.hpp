@@ -5,8 +5,9 @@
 #include <cstdio>
 #include <sstream>
 #include <fstream>
+#include <stdio.h>
 #include <iostream>
-#include <Python.h>
+#include <python3.9/Python.h>
 
 
 #include <Poco/Util/ServerApplication.h>
