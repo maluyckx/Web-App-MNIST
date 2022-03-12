@@ -10,7 +10,7 @@ function sendRequest(file_name, file){
       file.name
     );
     // L'url de notre server
-    axios.post("localhost:2022", formData);
+    axios.post("localhost:2022/image/", formData);
 }
 
 function HttpRequestSend(file_name, type, file) {
