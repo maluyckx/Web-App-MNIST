@@ -11,8 +11,8 @@ import CanvasDraw from "react-canvas-draw";
 class Drawgame extends Component {
   state = {
     color: "#263238",
-    width: 210,
-    height: 210,
+    width: 270,
+    height: 270,
     brushRadius: 4,
     lazyRadius: 5,
   };
@@ -21,7 +21,7 @@ class Drawgame extends Component {
     return (
       <div className="containerDraw">
         <div className="buttons">
-            <img className="img-pencil" alt="eraser" src={pencil}
+            <img className="img-pencil" alt="pencil" src={pencil}
                   onClick={() => {this.setState({color: "#263238"})}}/> 
             <img className="img-eraser" alt="eraser" src={eraser}
                   onClick={() => {this.setState({color: "#FFFFFF"})}}/> 

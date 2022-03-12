@@ -8,3 +8,6 @@ npm i react-canvas-draw
 
 Axios (pour gérer l'envoie de fichier et tout):
 npm install axios
+
+React cookies (pour les cookies)
+npm i js-cookie   

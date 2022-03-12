@@ -1,31 +1,28 @@
 import React, { Component } from "react";
-import axios from 'axios';
 
 import "../../styles/ImageMain.css"
 import BlockChoice from "../Home/BlockChoice";
-import takePhoto from "../../assets/img/take_photo.png"
 import upload from "../../assets/img/upload.png"
+import HttpRequestSend from "../HttpRequestSend";
+import HttpRequestReceive from "../HttpRequestReceive";
 
 class ImageMain extends Component {
 
-  state = {selectedFile: null};
+  state = {
+    selectedFile: null,
+    text_ia: "Tartine",
+  };
   
   // On file select (from the pop up)
   onFileChange = event => {
     this.setState({ selectedFile: event.target.files[0] });
+    HttpRequestReceive(1);
   };
   
   onFileUpload = () => {
-    // Create an object of formData
-    const formData = new FormData();
-    // Update the formData object
-    formData.append(
-      "myFile",
-      this.state.selectedFile,
-      this.state.selectedFile.name
-    );
-    console.log(this.state.selectedFile);
-    axios.post("api/uploadfile", formData);
+    this.setState({text_ia: "upload"});
+    HttpRequestSend(this.state.selectedFile.name, 1, this.state.selectedFile);
+    this.setState({text_ia: HttpRequestReceive(1)});
   };
 
   infoFile = () => {
@@ -58,13 +55,20 @@ class ImageMain extends Component {
   render() {
     return (
       <div className="ImageMain">
-        <h2>Images</h2>
+        <h2>Image</h2>
         <div className="image-container">
-          <BlockChoice name={"Take a pic"} 
-                        img_link={takePhoto} 
-                        description={"Pour l'instant flemme de faire celui là"} 
-                        link_to={""}/>
-                        
+
+          <div class="upload">
+            <label htmlFor={"upload-button"}>
+              <BlockChoice name={"Upload"} 
+                          img_link={upload} 
+                          description={"Click Me !"} 
+                          link_to={""}/>
+            </label>
+            <input type="file" id="upload-button" style={{display: 'none'}} 
+                  onChange={this.onFileChange} accept="image/x-png,image/jpeg" />
+          </div>   
+
           <div className="text-analyze">
             <div className="text-file">
               {this.infoFile()}
@@ -73,18 +77,9 @@ class ImageMain extends Component {
               </button>
             </div>
             <span className="text-block">
-              text block
+              {this.state.text_ia}
             </span>
           </div>
-
-          <label htmlFor={"upload-button"}>
-            <BlockChoice name={"Upload"} 
-                        img_link={upload} 
-                        description={"Ca marche bien c'est cool"} 
-                        link_to={""}/>
-          </label>
-          <input type="file" id="upload-button" style={{display: 'none'}} 
-                 onChange={this.onFileChange} accept="image/x-png,image/jpeg" />
         </div>
       </div>
     );
