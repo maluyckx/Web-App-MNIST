@@ -1,5 +1,4 @@
-import React, { Component, useState } from "react";
-import { render } from "react-dom";
+import React, { Component } from "react";
 import eraser from "../../assets/img/eraser.png"
 import pencil from "../../assets/img/pencil.png"
 import undo from "../../assets/img/undo.png"
@@ -53,6 +52,7 @@ class Drawzone extends Component {
 
 
   render() {
+
     return (
       <div className="containerDraw">
         <div className="draw-buttons">
@@ -66,9 +66,8 @@ class Drawzone extends Component {
                   onClick={() => {this.saveableCanvas.eraseAll();}}/> 
             <img className="img-start" alt="start" src={start}
                   onClick={() => {
-                    console.log(this.saveableCanvas.getDataURL());
-                    console.log(dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png")) /* à enlever dans le futur   */
-                    HttpRequestSend("pipou.png", 1, dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png") ) 
+                    console.log(this.saveableCanvas.getDataURL('png', null, "#FFFFFF"));
+                    HttpRequestSend("pipou.png", 1, dataURLtoFile(this.saveableCanvas.getDataURL('png', null, "#ff0000"),"pipou.png") ) 
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"

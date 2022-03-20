@@ -17,7 +17,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/EdgardoCuellar" target="_blank" >
+                        <a href="https://github.com/EdgardoCuellar" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Edo_photo} />
                         </a>
                       </div>
@@ -29,7 +29,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/maluyckx" target="_blank" >
+                        <a href="https://github.com/maluyckx" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Marco_photo} />
                         </a>
                       </div>
@@ -41,7 +41,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/timarque" target="_blank" >
+                        <a href="https://github.com/timarque" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Tiago_photo} />
                         </a>
                       </div>
@@ -53,7 +53,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/adiscepo" target="_blank" >
+                        <a href="https://github.com/adiscepo" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Attilio_photo} />
                         </a>
                       </div>
@@ -70,7 +70,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/Arcools-ulb" target="_blank" >
+                        <a href="https://github.com/Arcools-ulb" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Logo} />
                         </a>
                       </div>
@@ -82,7 +82,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/gcoolen" target="_blank" >
+                        <a href="https://github.com/gcoolen" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Logo} />
                         </a>
                       </div>
@@ -94,7 +94,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/alvdhoev" target="_blank" >
+                        <a href="https://github.com/alvdhoev" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Logo} />
                         </a>
                       </div>
@@ -106,7 +106,7 @@ class Team extends Component {
               <div class="column">
                   <div class="team">
                       <div class="team-img">
-                        <a href="https://github.com/mathleng" target="_blank" >
+                        <a href="https://github.com/mathleng" rel="noreferrer" target="_blank" >
                           <img className="logo-header" alt="logo" src={Logo} />
                         </a>
                       </div>

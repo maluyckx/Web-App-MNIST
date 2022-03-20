@@ -17,7 +17,7 @@ class MainGame extends Component {
 }
 
 document.addEventListener('keydown', function(event){
-  if (event.keyCode == 13 || event.keyCode == 32){
+  if (event.keyCode === 13 || event.keyCode === 32){
     alert("ENTER")
   }
 })
