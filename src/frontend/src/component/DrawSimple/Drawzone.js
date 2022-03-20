@@ -9,6 +9,8 @@ import HttpRequestSend from "../HttpRequestSend";
 
 import CanvasDraw from "react-canvas-draw";
 
+// Todo: Exporter l'image avec un arrière plan blanc et pas transparent
+
 function dataURLtoFile(dataurl, filename) {
   var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
       bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
@@ -17,7 +19,6 @@ function dataURLtoFile(dataurl, filename) {
   }
   return new File([u8arr], filename, {type:mime});
 }
-
 
 class Drawzone extends Component {
   
@@ -67,8 +68,7 @@ class Drawzone extends Component {
             <img className="img-start" alt="start" src={start}
                   onClick={() => {
                     console.log(this.saveableCanvas.getDataURL());
-                    console.log(dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png")) /* à enlever dans le futur   */
-                    HttpRequestSend("pipou.png", 1, dataURLtoFile(this.saveableCanvas.getDataURL(),"pipou.png") ) 
+                    HttpRequestSend(this.saveableCanvas.getDataURL()) 
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"
