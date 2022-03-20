@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import eraser from "../../assets/img/eraser.png"
 import pencil from "../../assets/img/pencil.png"
 import undo from "../../assets/img/undo.png"
