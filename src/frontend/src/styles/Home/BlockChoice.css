@@ -63,11 +63,10 @@ h3 {
     .desc_text{
         color: #263238;
         display: block;
-        height: 65px;
+        height: 66px;
         width: 16em;
-        overflow: auto;
-        font-size: 15px;
-        margin-bottom: 0%;
+        overflow: hidden;
+        font-size: 14px;
     }
     
 }
