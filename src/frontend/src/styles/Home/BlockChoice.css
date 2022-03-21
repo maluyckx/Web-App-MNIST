@@ -59,5 +59,15 @@ h3 {
         width: 8.5em;
         height: 8.5em;
     }
+
+    .desc_text{
+        color: #263238;
+        display: block;
+        height: 65px;
+        width: 16em;
+        overflow: auto;
+        font-size: 15px;
+        margin-bottom: 0%;
+    }
     
 }
