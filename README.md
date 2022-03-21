@@ -18,13 +18,13 @@ Le dossier ./src/API contient le code de l'API (permettant la communication entr
 ## Équipe
 
 Gregory COOLEN
-Alan COOLS
+Alan VANDERHOEVEN
 Edgardo CUELLAR-SANCHEZ
 Attilio DISCEPOLI
 Mathieu LENG
 Marco LUYCKX
 Tiago MARQUES-CORREIA
-Arnaud VANDERHOEVEN
+Arnaud COOLS
 
 ## Remerciements
 
