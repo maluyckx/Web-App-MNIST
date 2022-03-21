@@ -8,8 +8,6 @@ import HttpRequestSend from "../HttpRequestSend";
 
 import CanvasDraw from "react-canvas-draw";
 
-// Todo: Exporter l'image avec un arrière plan blanc et pas transparent
-
 function dataURLtoFile(dataurl, filename) {
   var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
       bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
@@ -66,9 +64,10 @@ class Drawzone extends Component {
             <img className="img-restart" alt="restart" src={restart}
                   onClick={() => {this.saveableCanvas.eraseAll();}}/> 
             <img className="img-start" alt="start" src={start}
-                  onClick={() => {
-                    console.log(this.saveableCanvas.getDataURL());
-                    HttpRequestSend(dataURLtoFile(this.saveableCanvas.getDataURL('png', null, "#ff0000")))
+                  onClick={async () => {
+                    this.props.parent.setState({text_w: "..."})
+                    var res = await HttpRequestSend(this.saveableCanvas.getDataURL('png', undefined, "#ffffff"))
+                    this.props.parent.setState({text_w: res.answer})
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"

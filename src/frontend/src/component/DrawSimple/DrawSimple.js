@@ -4,17 +4,22 @@ import Drawzone from "./Drawzone.js"
 
 
 class DrawSimple extends Component {
-
-  text_w = "e"
+  state = {
+    text_w: "",
+  };
 
   render() {
     return (
       <div className="MainDraw">
         <span className="draw-title">Drawspace</span>
-        <div className="drawzoned"><Drawzone/></div> 
-        <span className="draw-text-zone">{this.text_w}</span>
+        <div className="drawzoned"><Drawzone parent={this} /></div> 
+        <span className="draw-text-zone">{this.state.text_w}</span>
       </div>
     );
+  }
+
+  updateText(value) {
+    this.setState({text_w: value});
   }
 }
 
