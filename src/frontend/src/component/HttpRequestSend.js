@@ -7,7 +7,7 @@ async function HttpRequestSend(file) {
     },
     body: JSON.stringify({'file': file})
   }).then((res) => {return res.json()}).then((data) => {
-    return data
+    return data.answer
   })
   // console.log("[HTTP Receive] ", res)
   // return res

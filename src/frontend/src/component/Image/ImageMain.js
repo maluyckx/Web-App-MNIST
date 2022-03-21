@@ -6,26 +6,15 @@ import upload from "../../assets/img/upload.png"
 import HttpRequestSend from "../HttpRequestSend";
 import HttpRequestReceive from "../HttpRequestReceive";
 
-  
-function imageUploaded(file) {
-    var base64String = ""
-    var imageBase64Stringsep = ""
-    var reader = new FileReader();
-    
-    console.log("next");
-      
-    reader.onload = function () {
-        base64String = reader.result.replace("data:", "")
-            .replace(/^.+,/, "");
-  
-        imageBase64Stringsep = base64String;
-  
-        // alert(imageBase64Stringsep);
-        console.log(base64String);
-    }
+async function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
     reader.readAsDataURL(file);
-    return base64String
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
 }
+
 class ImageMain extends Component {
 
   state = {
@@ -39,10 +28,12 @@ class ImageMain extends Component {
     // HttpRequestReceive(1);
   };
   
-  onFileUpload = () => {
+  onFileUpload = async () => {
     this.setState({text_ia: "upload"});
-    HttpRequestSend(imageUploaded(this.state.selectedFile))
-    // this.setState({text_ia: HttpRequestReceive(1)});
+    var res = await getBase64(this.state.selectedFile)
+    this.setState({text_ia: "..."});
+    var answer = await HttpRequestSend(res)
+    this.setState({text_ia: answer});
   };
 
   infoFile = () => {
