@@ -1,21 +1,16 @@
-import axios from 'axios';
-import Cookies from 'js-cookie'
-
-
-function sendRequest(file_name, file){
-    const formData = new FormData();
-    formData.append(
-      file_name,
-      file,
-      file.name
-    );
-    // L'url de notre server
-    axios.post("localhost:2022/image/", formData);
-}
-
-function HttpRequestSend(file_name, type, file) {
-    var final_name = type + "_" + Cookies.get('UserNB') + "_" + file_name;
-    sendRequest(final_name, file);
+async function HttpRequestSend(file) {
+  return await fetch("http://127.0.0.1:2022/", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'file': file})
+  }).then((res) => {return res.json()}).then((data) => {
+    return data.answer
+  })
+  // console.log("[HTTP Receive] ", res)
+  // return res
 }
   
 export default HttpRequestSend

@@ -18,7 +18,7 @@ class Header extends Component {
           <div className="HeaderContainer">
               <Link to={"/"} className="HeaderText">Home</Link>
               <Link to={"/team"} className="HeaderText">Team</Link>
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className="HeaderText" rel="noreferrer">Video</a>
+              <a href="https://www.youtube.com/watch?v=LJfyfS6Mshk" target="_blank" className="HeaderText" rel="noreferrer">Video</a>
               <a href="https://github.com/maluyckx/mnist-tartine-2022" target="_blank" className="HeaderText" rel="noreferrer">Github Repository</a>
           </div>
         </div>

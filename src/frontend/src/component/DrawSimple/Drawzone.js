@@ -17,7 +17,6 @@ function dataURLtoFile(dataurl, filename) {
   return new File([u8arr], filename, {type:mime});
 }
 
-
 class Drawzone extends Component {
   
   state = {
@@ -65,9 +64,10 @@ class Drawzone extends Component {
             <img className="img-restart" alt="restart" src={restart}
                   onClick={() => {this.saveableCanvas.eraseAll();}}/> 
             <img className="img-start" alt="start" src={start}
-                  onClick={() => {
-                    console.log(this.saveableCanvas.getDataURL('png', null, "#FFFFFF"));
-                    HttpRequestSend("pipou.png", 1, dataURLtoFile(this.saveableCanvas.getDataURL('png', null, "#ff0000"),"pipou.png") ) 
+                  onClick={async () => {
+                    this.props.parent.setState({text_w: "..."})
+                    var res = await HttpRequestSend(this.saveableCanvas.getDataURL('png', undefined, "#ffffff"))
+                    this.props.parent.setState({text_w: res})
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"

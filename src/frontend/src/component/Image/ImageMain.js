@@ -6,6 +6,15 @@ import upload from "../../assets/img/upload.png"
 import HttpRequestSend from "../HttpRequestSend";
 import HttpRequestReceive from "../HttpRequestReceive";
 
+async function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+}
+
 class ImageMain extends Component {
 
   state = {
@@ -16,13 +25,15 @@ class ImageMain extends Component {
   // On file select (from the pop up)
   onFileChange = event => {
     this.setState({ selectedFile: event.target.files[0] });
-    HttpRequestReceive(1);
+    // HttpRequestReceive(1);
   };
   
-  onFileUpload = () => {
+  onFileUpload = async () => {
     this.setState({text_ia: "upload"});
-    HttpRequestSend(this.state.selectedFile.name, 1, this.state.selectedFile);
-    this.setState({text_ia: HttpRequestReceive(1)});
+    var res = await getBase64(this.state.selectedFile)
+    this.setState({text_ia: "..."});
+    var answer = await HttpRequestSend(res)
+    this.setState({text_ia: answer});
   };
 
   infoFile = () => {
@@ -66,7 +77,7 @@ class ImageMain extends Component {
                           link_to={""}/>
             </label>
             <input type="file" id="upload-button" style={{display: 'none'}} 
-                  onChange={this.onFileChange} accept="image/x-png,image/jpeg" />
+                  onChange={this.onFileChange} accept="image/png" />
           </div>   
 
           <div className="text-analyze">
