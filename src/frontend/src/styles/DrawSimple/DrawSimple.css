@@ -57,7 +57,7 @@
 @media (max-width: 620px) {
   .draw-text-zone{
     padding-bottom: 20px;
-    width: 350px;
+    width: 140px;
     height: 50px;
     font-size: 50px;
   }
