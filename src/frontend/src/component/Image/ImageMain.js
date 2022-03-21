@@ -33,7 +33,11 @@ class ImageMain extends Component {
     var res = await getBase64(this.state.selectedFile)
     this.setState({text_ia: "..."});
     var answer = await HttpRequestSend(res)
-    this.setState({text_ia: answer});
+    if (answer >= 10) {
+      this.setState({text_ia: "Erreur"});
+    }else {
+      this.setState({text_ia: answer});
+    }
   };
 
   infoFile = () => {

@@ -67,7 +67,11 @@ class Drawzone extends Component {
                   onClick={async () => {
                     this.props.parent.setState({text_w: "..."})
                     var res = await HttpRequestSend(this.saveableCanvas.getDataURL('png', undefined, "#ffffff"))
-                    this.props.parent.setState({text_w: res})
+                    if (res >= 10) {
+                      this.props.parent.setState({text_w: "Erreur"})
+                    }else {
+                      this.props.parent.setState({text_w: res})
+                    }
                   }}/>
         </div>
         <CanvasDraw className="canvaDraw"
