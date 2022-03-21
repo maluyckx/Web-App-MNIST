@@ -25,7 +25,7 @@ async function executeScriptAI(filename) {
     // Si le programme renvoie 0 c'est dans le try si c'est un autre c'est dans le catch
     var res = 255
     try {
-        await exec('python3 ../AI/main.py ' + filename)
+        await exec('python3 AI/main.py ' + filename)
         res = 0 // Le code de retour était 0 sil e programme a réussi
     } catch (error) {
         res = error.code
