@@ -1,9 +1,0 @@
-Si vous voulez run le server, vous avez besoin d'installer la librairies Poco
-
-En linux, vous avez cette commande:
-sudo apt install libpoco-dev
-
-sinon je vous renvois sur ce site:
-https://pocoproject.org/download.html
-et pour windows plus specifiquement:
-https://cppsecrets.com/users/2360981051101001171149710610111010011497525664103109971051084699111109/C00-POCO-windows-installation.php
