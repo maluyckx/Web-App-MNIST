@@ -1,5 +1,5 @@
 async function HttpRequestSend(file) {
-  return await fetch("http://127.0.0.1:2022/", {
+  return await fetch("https://tartine-server.herokuapp.com/", {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

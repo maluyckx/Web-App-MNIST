@@ -4,7 +4,6 @@ import "../../styles/ImageMain.css"
 import BlockChoice from "../Home/BlockChoice";
 import upload from "../../assets/img/upload.png"
 import HttpRequestSend from "../HttpRequestSend";
-import HttpRequestReceive from "../HttpRequestReceive";
 
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -25,7 +24,6 @@ class ImageMain extends Component {
   // On file select (from the pop up)
   onFileChange = event => {
     this.setState({ selectedFile: event.target.files[0] });
-    // HttpRequestReceive(1);
   };
   
   onFileUpload = async () => {

@@ -5,7 +5,7 @@ const multer = require('multer'); // Pour l'upload d'images
 const upload = multer(); // Ditto
 const fs = require('fs'); // Ditto
 const {v1: uuidv1} = require('uuid'); // Pour donner des identifiants uniques aux images
-const port = 2022
+const port = process.env.PORT || 2022;
 var cors = require('cors');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -56,5 +56,9 @@ app.post('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
+
+app.get("/port", (req, res) => {
+    res.status(200).send({port:port})
+});
