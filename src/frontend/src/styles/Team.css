@@ -116,12 +116,12 @@ img {
     width: 80%;
     height: auto;
     border-radius: 100%;
-    border: 15px solid #f3f4fa;
+    border: 15px solid rgba(209,196,233, 0.60);
     transition: all .3s;
 }
 
 .team:hover .team-img img {
-    border: 0px solid #f3f4fa;
+    border: 0px solid rgba(209,196,233, 0.95);
 }
 
 .team .team-content {

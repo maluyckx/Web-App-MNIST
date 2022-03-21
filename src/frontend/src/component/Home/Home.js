@@ -8,7 +8,6 @@ class Home extends Component {
     return (
       <div className="HomeMain">
         <h2>The Tartine Network</h2>
-        <span>Launch the server AI on your localhost</span>
         <div className="home-container">
           <BlockChoice name={"Drawing"} 
                        img_link={"https://cdn.discordapp.com/attachments/718214061283737712/937027342201655356/SeekPng.com_patriots-logo-png_295350.png"} 

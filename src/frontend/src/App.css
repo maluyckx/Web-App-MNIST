@@ -1,14 +1,10 @@
 html {
-  /* sorry edo mais mon PC va exploser sinon
-  
   background-image: linear-gradient(#EDE2E0 .05em, transparent .05em), 
                     linear-gradient(90deg, #E2C4C2 .05em, transparent .05em);
   background-size: 3em 3em;
 	animation: gradient 30s ease infinite;
 
   color: #2C2A2F;
-  */
-  background-color: blanchedalmond;
 }
 
 @keyframes gradient {

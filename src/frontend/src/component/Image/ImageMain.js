@@ -19,7 +19,7 @@ class ImageMain extends Component {
 
   state = {
     selectedFile: null,
-    text_ia: "Tartine",
+    text_ia: "",
   };
   
   // On file select (from the pop up)
@@ -29,14 +29,18 @@ class ImageMain extends Component {
   };
   
   onFileUpload = async () => {
-    this.setState({text_ia: "upload"});
-    var res = await getBase64(this.state.selectedFile)
-    this.setState({text_ia: "..."});
-    var answer = await HttpRequestSend(res)
-    if (answer >= 10) {
-      this.setState({text_ia: "Erreur"});
-    }else {
-      this.setState({text_ia: answer});
+    if (this.selectedFile != null) {
+      this.setState({text_ia: "upload"});
+      var res = await getBase64(this.state.selectedFile)
+      this.setState({text_ia: "..."});
+      var answer = await HttpRequestSend(res)
+      if (answer >= 10) {
+        this.setState({text_ia: "Erreur"});
+      }else {
+        this.setState({text_ia: answer});
+      }
+    } else {
+        this.setState({text_ia: "Erreur"});
     }
   };
 
