@@ -4,8 +4,8 @@ import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
-save = False
-train = False
+save = True
+train = True
 
 # Data
 
@@ -45,5 +45,5 @@ if __name__ == '__main__':
         test_loss, test_acc = model.evaluate(x_test, y_test)
         print("Test Loss: {0} - Test Acc: {1}".format(test_loss, test_acc))
     if save:
-        saved_model = model.save("weights/")
+        saved_model = model.save("weights/model.h5")
 
